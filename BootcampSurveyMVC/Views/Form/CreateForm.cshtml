@@ -1,0 +1,76 @@
+﻿@using BootcampSurveyMVC.Models.ViewModel;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@*<div class="container">
+    <h2>Create Form</h2>
+    <form asp-controller="Form" asp-action="CreateForm" method="post">
+        @if (ViewBag.Questions != null)
+        {
+            var questionViewModels = (List<QuestionViewModel>)ViewBag.Questions;
+            for (var i = 0; i < questionViewModels.Count; i++)
+            {
+                <div class="form-group">
+                    <h4>@questionViewModels[i].QuestionText</h4>
+                    @for (var j = 0; j < questionViewModels[i].Answers.Count; j++)
+                    {
+                        <div class="form-check">
+                            <input type="radio" asp-for="@questionViewModels[i].Answers[j].AnswerId" class="form-check-input" />
+                            <label class="form-check-label">@questionViewModels[i].Answers[j].AnswerText</label>
+                        </div>
+                    }
+                </div>
+            }
+        }
+        <button type="submit" class="btn btn-primary">Submit Form</button>
+    </form>
+</div>*@
+
+@model QuestionViewModel
+
+@if (ViewBag.Questions is not null)
+{
+    <p>
+        <span>@ViewBag.Questions</span>
+    </p>
+}
+
+@*<div class="container">
+    <form asp-controller="Form" asp-action="CreateForm" method="post">
+
+    </form>
+</div>
+*@
+<div class="container">
+    <h2>Create Form</h2>
+    <form asp-controller="Form" asp-action="CreateForm" method="post">
+        @if (ViewBag.Questions != null)
+        {
+            AnswerViewModel answerViewModel;
+            var questionViewModels = (List<QuestionViewModel>)ViewBag.Questions;
+            <select asp-for="QuestionText" asp-items="@ViewBag.Questions"></select>
+            <br />
+@*            <input asp-for="@answerViewModel">
+*@            /*for (var i = 0; i < questionViewModels.Count; i++)
+            {
+                <select asp-for="QuestionText" asp-items="@ViewBag.Questions"></select>
+                <div class="form-group">
+                    <h4>@questionViewModels[i].QuestionText</h4>
+                    @for (var j = 0; j < questionViewModels[i].Answers.Count; j++)
+                    {
+                        <div class="form-check">
+                            <input type="radio" asp-for="@questionViewModels[i].Answers[j].IsCorrect" class="form-check-input" value="true" />
+                            <label class="form-check-label">@questionViewModels[i].Answers[j].AnswerText</label>
+                            <input type="hidden" asp-for="@questionViewModels[i].Answers[j].AnswerLocation" value="@j" />
+                        </div>
+                    }
+                </div>
+            }*/
+        }
+        <button type="submit" class="btn btn-primary">Submit Form</button>
+    </form>
+</div>

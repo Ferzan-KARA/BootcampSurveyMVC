@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Friend Surveyer'a Hoşgeldiniz'</h1>
+    <p>Arkadaşlarınızın sizi ne kadar iyi tanıdığını görmek isterseniz doğru yere geldiniz</p> <br />
+    <a asp-controller="Guest" asp-action="CreateGuest">Dene Beni</a>
+</div>
+
+<div class="text-center">
+    <button asp-controller="Home" asp-action="Index" class="btn btn-primary">
+        Giriş Yap
+    </button>
+    <button asp-controller="Home" asp-action="Index" class="btn btn-warning">
+        Kaydol
+    </button>
+</div>

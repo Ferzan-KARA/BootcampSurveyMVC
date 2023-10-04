@@ -1,0 +1,13 @@
+﻿@using BootcampSurveyMVC.Models.Entities;
+
+
+@model Guest
+
+<p>Kayıtlı üyemiz değilsiniz işlem yapabilmek için isminizi giriniz</p>
+
+<form asp-action="CreateGuest" method="post">
+    İsim: <input asp-for="GuestName" />
+    <br />
+    <br />
+    <button class="btn btn-success">Devam Et</button>
+</form>
